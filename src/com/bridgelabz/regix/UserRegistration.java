@@ -43,13 +43,27 @@ public class UserRegistration {
             System.out.print("Not valid: ");
         }
     }
+
+    void validMobileNumber(){
+        Pattern pattern = Pattern.compile("^[91]{2}\s[1-9]{9,}[0-9]+$");
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        System.out.print("Enter mobile number: ");
+        String mobileNumber = sc.nextLine();
+        Matcher matcher = pattern.matcher(mobileNumber);
+        if (matcher.matches()){
+            System.out.print("Valid mobile number: " + mobileNumber);
+        }else {
+            System.out.print("Not valid: ");
+        }
+    }
     public static void main(String[] args) {
         UserRegistration obj = new UserRegistration();
 
         obj.validFirstName();
         obj.validLastName();
         obj.validEmail();
-
+        obj.validMobileNumber();
 
     }
 

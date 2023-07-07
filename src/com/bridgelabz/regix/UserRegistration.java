@@ -6,18 +6,22 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     void validFirstName(){
-        Pattern pattern = Pattern.compile("[^A-Z][a-zA-Z][0-9]*$");
-        Pattern pattern1 = Pattern.compile("^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$");
-        Pattern pattern2 = Pattern.compile("^[9][1]\s[6-9][0-9]{9}$");
+        Pattern pattern = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the first name: ");
         String firstName = sc.nextLine();
         Matcher matcher = pattern.matcher(firstName);
         if (matcher.matches()){
-            System.out.println("First name is valid: ");
+            System.out.println("Valid first name: " + firstName);
         }else {
-            System.out.println("First name is not valid: ");
+            System.out.println("Not valid: ");
         }
+    }
+    public static void main(String[] args) {
+        System.out.println("Welcome to user registration: ");
+        System.out.println();
+        UserRegistration obj = new UserRegistration();
+        obj.validFirstName();
 
     }
 

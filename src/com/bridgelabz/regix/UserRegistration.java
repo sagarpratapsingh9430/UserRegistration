@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     void validPassword(){
-        Pattern pattern = Pattern.compile("^[A-Z]+[a-zA-Z0-9]{7,}$");
+        Pattern pattern = Pattern.compile("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$");
         Scanner sc = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter password: ");

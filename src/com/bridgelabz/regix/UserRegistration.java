@@ -6,10 +6,10 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     void validPassword(){
-        Pattern pattern = Pattern.compile("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
         Scanner sc = new Scanner(System.in);
         System.out.println();
-        System.out.print("Enter password: ");
+        System.out.print("Enter password including one special character: ");
         String password = sc.nextLine();
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches()){
